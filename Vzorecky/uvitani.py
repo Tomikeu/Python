@@ -6,33 +6,42 @@ petr = {"Petr"}
 u = {"Vojtech"}
 eu = {"Vítek Vitek"}
 
-if n in i:
-    print("Vítej " + n + "i")
-elif n in o:
-    pismena = n.split()
-    nove_pismeno = [pismeno[:-1] + "o" if pismeno.endswith("a") else pismeno for pismeno in pismena]
-    novy_text = " ".join(nove_pismeno)
-    print("Vítej " + novy_text)
-elif n in e:
-    print("Vítej " + n + "e")
-elif n in petr:
-    novy_text= n.replace("r", "ř")
-    print("Vítej " + novy_text + "e")
-elif n in u:
-    print("Vítej " + n + "u")
-elif n in eu:
-    novy_text = n.replace("e", "")
-    print("Vítej " + novy_text + "u")
-else:
-    add = input("Omlouvám se, vaše jméno není v databázi, chcete ho přidat ?")
-    if add == "ano" or add == "jo":
-        novy = input("Jelikož nejsem člověk potřebuji poradit.\nPokud vaše jméno oslovíte (Ahoj, jmeno) jaké je písmeno na konci\n Pokud i - napište i\nPokud o - napište o\nPokud e - napište e\n Pokud u - napište u\nPokud ani jedno napiš end")
-        if novy == "i":
-            i.add("New")
-            print
-        elif novy == "o":
+while True:
+    if n in i:
+        print("Vítej " + n + "i")
+        break
+    elif n in o:
+        pismena = n.split()
+        nove_pismeno = [pismeno[:-1] + "o" if pismeno.endswith("a") else pismeno for pismeno in pismena]
+        novy_text = " ".join(nove_pismeno)
+        print("Vítej " + novy_text)
+        break
+    elif n in e:
+        print("Vítej " + n + "e")
+        break
+    elif n in petr:
+        novy_text= n.replace("r", "ř")
+        print("Vítej " + novy_text + "e")
+        break
+    elif n in u:
+        print("Vítej " + n + "u")
+        break
+    elif n in eu:
+        novy_text = n.replace("e", "")
+        print("Vítej " + novy_text + "u")
+        break
     else:
-        print("Dobře, užíjte si kalkulačku.")
+        while True:
+            add = input("Omlouvám se, vaše jméno není v databázi, chcete ho přidat ?")
+            if add == "ano" or add == "jo":
+                novy = input("Jelikož nejsem člověk potřebuji poradit.\nPokud vaše jméno oslovíte (Ahoj, jmeno) jaké je písmeno na konci\n Pokud i - napište i\nPokud o - napište o\nPokud e - napište e\n Pokud u - napište u\nPokud ani jedno napiš end")
+                if novy == "i":
+                    i.add(novy)
+                break
+            elif add == "ne":
+                print("Dobře, užíjte si kalkulačku.")
+            else:
+                print("Zkus to napsat znovu")
     
 
 #Pridani jmena do databaze
