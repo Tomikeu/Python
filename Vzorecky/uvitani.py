@@ -1,10 +1,10 @@
 n = input("Jak se jmenuješ ? (Napiš pouze křestní jmeno)\n")
-i = {"Tomas Tomáš Matěj Matej Lukas Lukáš Matyas Matyáš Daniel Tobias Tobiáš Samuel Tadeas Tadeáš Jonas Jonáš Ondřej Ondrej"}
-o = {"Honza Vojta Zuzana Magdalena Majda Amáta Amata Albína Albina Ariana Adéla Adela Alžběta Alzbeta Ondra"}
-e = {"Jakub Jan Adam Zikmund Adolf Albert Tibor"}
-petr = {"Petr"}
-u = {"Vojtech"}
-eu = {"Vítek Vitek"}
+i = ["Tomas", "Tomáš", "Matěj", "Matej", "Lukas", "Lukáš", "Matyas", "Matyáš", "Daniel", "Tobias", "Tobiáš", "Samuel", "Tadeas", "Tadeáš", "Jonas", "Jonáš", "Ondřej", "Ondrej"]
+o = ["Honza", "Vojta", "Zuzana", "Magdalena", "Majda", "Amáta", "Amata", "Albína", "Albina", "Ariana", "Adéla", "Adela", "Alžběta", "Alzbeta", "Ondra"]
+e = ["Jakub", "Jan", "Adam", "Zikmund", "Adolf", "Albert", "Tibor"]
+petr = ["Petr"]
+u = ["Vojtech"]
+eu = ["Vítek", "Vitek"]
 
 while True:
     if n in i:
@@ -20,7 +20,7 @@ while True:
         print("Vítej " + n + "e")
         break
     elif n in petr:
-        novy_text= n.replace("r", "ř")
+        novy_text = n.replace("r", "ř")
         print("Vítej " + novy_text + "e")
         break
     elif n in u:
@@ -31,31 +31,24 @@ while True:
         print("Vítej " + novy_text + "u")
         break
     else:
-        while True:
-            add = input("Omlouvám se, vaše jméno není v databázi, chcete ho přidat ?")
-            if add == "ano" or add == "jo":
-                novy = input("Jelikož nejsem člověk potřebuji poradit.\nPokud vaše jméno oslovíte (Ahoj, jmeno) jaké je písmeno na konci\n Pokud i - napište i\nPokud o - napište o\nPokud e - napište e\n Pokud u - napište u\nPokud ani jedno napiš end")
-                if novy == "i":
-                    i.add(novy)
-                    break
-                elif novy == "o":
-                    o.add(novy)
-                    break
-                elif novy == "e":
-                    e.add(novy)
-                    break
-                elif novy == "u":
-                    u.add(novy)
-                    break
-                elif novy == "end":
-                    break
-                else:
-                    print("Zkuste to znovu.")  
-            elif add == "ne":
-                print("Dobře, užíjte si kalkulačku.")
+        
+        add = input("Omlouvám se, vaše jméno není v databázi, chcete ho přidat ?\n")
+        if add.lower() in ["ano", "jo"]:
+            novy = input("Jelikož nejsem člověk potřebuji poradit.\nPokud vaše jméno oslovíte (Ahoj, jmeno) jaké je písmeno na konci\n Pokud i - napište i\nPokud o - napište o\nPokud e - napište e\n Pokud u - napište u\nPokud ani jedno napiš end\n")
+            if novy == "i":
+                i.append(n)
+            elif novy == "o":
+                o.append(n)
+            elif novy == "e":
+                e.append(n)
+            elif novy == "u":
+                u.append(n)
+            elif novy == "end":
+                print("Konec")
             else:
-                print("Zkus to napsat znovu")
-    
-
-#Pridani jmena do databaze
-#.find pokud treba u o = "..." budou 2 (a) tak to jedno vynecha a replacne pouze to jedno
+                print("Zkuste to znovu.")
+        elif add.lower() in ["ne", "nechci"]:
+            print("Dobře, užíjte si kalkulačku.")
+            break
+        else:
+            print("Něco je špatně")
