@@ -37,7 +37,20 @@ while True:
                 novy = input("Jelikož nejsem člověk potřebuji poradit.\nPokud vaše jméno oslovíte (Ahoj, jmeno) jaké je písmeno na konci\n Pokud i - napište i\nPokud o - napište o\nPokud e - napište e\n Pokud u - napište u\nPokud ani jedno napiš end")
                 if novy == "i":
                     i.add(novy)
-                break
+                    break
+                elif novy == "o":
+                    o.add(novy)
+                    break
+                elif novy == "e":
+                    e.add(novy)
+                    break
+                elif novy == "u":
+                    u.add(novy)
+                    break
+                elif novy == "end":
+                    break
+                else:
+                    print("Zkuste to znovu.")  
             elif add == "ne":
                 print("Dobře, užíjte si kalkulačku.")
             else:
