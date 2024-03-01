@@ -17,7 +17,7 @@ for t in range(30):
 
 
 
-n = input("Jak se jmenuješ ? (Napiš pouze křestní jmeno)\n")
+n = input("Ahoj, jak se jmenuješ ? (Napiš pouze křestní jmeno)\n")
 i = ["Tomas", "Tomáš", "Matěj", "Matej", "Lukas", "Lukáš", "Matyas", "Matyáš", "Daniel", "Tobias", "Tobiáš", "Samuel", "Tadeas", "Tadeáš", "Jonas", "Jonáš", "Ondřej", "Ondrej"]
 o = ["Honza", "Vojta", "Zuzana", "Magdalena", "Majda", "Amáta", "Amata", "Albína", "Albina", "Ariana", "Adéla", "Adela", "Alžběta", "Alzbeta", "Ondra"]
 e = ["Jakub", "Jan", "Adam", "Zikmund", "Adolf", "Albert", "Tibor"]
